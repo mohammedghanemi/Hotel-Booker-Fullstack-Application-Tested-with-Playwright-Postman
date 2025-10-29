@@ -74,11 +74,23 @@ A modern full-stack web application for managing hotel bookings with a React fro
 ### Prerequisites
 - Node.js (v18 or higher)
 - MongoDB (v6.0 or higher)
-- npm or yarn
+- npm 
 
-### Step-by-Step Installation
--  Clone the repository:
+### System Architecture Diagram 
+
+![System Architecture](docs/Booking-Fullstackapp.drawio.png)
+
+[Download Full Architecture PDF](docs/Booking-Fullstackapp.pdf)
+
+1. Clone the repository:  
 ```bash
-git clone https://github.com/your-username/hotel-booker-fullstack.git
-cd hotel-booker-fullstack
+git clone https://github.com/mohammedghanemi/Hotel-Booker-Fullstack-Application-Tested-with-Playwright-Postman.git
+cd backend
+npm install
+cd frontend
+npm install
+npm install -D @playwright/test
+npx playwright install
 ```
+
+
