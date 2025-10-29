@@ -92,7 +92,7 @@ npm install
 npm install -D @playwright/test
 npx playwright install
 ```
-1. Running the Application:  
+2. Running the Application:  
 ```bash
 cd frontend
 npm start
