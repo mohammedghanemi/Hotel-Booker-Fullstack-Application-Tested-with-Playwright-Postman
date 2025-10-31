@@ -1,39 +1,45 @@
-import { defineConfig, devices } from '@playwright/test';
+const { defineConfig, devices } = require('@playwright/test');
 
-export default defineConfig({
-  testDir: './frontend',
+module.exports = defineConfig({
+  testDir: './', // Look in current directory (tests folder)
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
-  
-  use: {
-    baseURL: 'http://localhost:3000',
-    trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-  },
 
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'api',
+      testMatch: '**/api/**/*.spec.js',
+      use: { 
+        baseURL: 'http://localhost:3001'
+      },
     },
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      name: 'e2e',
+      testMatch: '**/e2e/**/*.spec.js', // Simplified pattern
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: 'http://localhost:3000'
+      },
     },
   ],
 
-  webServer: {
-    command: 'cd ../frontend && npm start',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
-  },
+  webServer: [
+    {
+      command: 'npm start',
+      url: 'http://localhost:3000',
+      reuseExistingServer: !process.env.CI,
+      timeout: 120 * 1000,
+      cwd: '../frontend',
+    },
+    {
+      command: 'npm start',
+      url: 'http://localhost:3001/ping',
+      reuseExistingServer: !process.env.CI,
+      timeout: 120 * 1000,
+      cwd: '../backend',
+    },
+  ],
 });
