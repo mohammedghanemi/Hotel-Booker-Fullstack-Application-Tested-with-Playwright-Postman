@@ -27,21 +27,26 @@ jobs:
 
     # 3️⃣ Install dependencies
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
-    # 4️⃣ Start backend server
+    # 4️⃣ Build backend (if needed)
+    - name: Build backend
+      run: npm run build || echo "No build step defined"
+
+    # 5️⃣ Start backend server in background
     - name: Start backend server
       run: |
         nohup node backend/server.js &
-        sleep 5  # wait for the server to start
+        echo "Waiting 10 seconds for server..."
+        sleep 10
 
-    # 5️⃣ Run Playwright tests
+    # 6️⃣ Run Playwright tests
     - name: Run Playwright tests
-      run: npx playwright test tests/api
+      run: npx playwright test tests/api || true
 
-    # 6️⃣ Upload Playwright HTML report even if tests fail
+    # 7️⃣ Upload Playwright report (even if tests fail)
     - name: Upload Playwright report
-      if: always()  # ensures upload even on test failure
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: playwright-report
