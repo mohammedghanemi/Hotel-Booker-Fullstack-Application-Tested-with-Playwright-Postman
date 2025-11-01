@@ -18,16 +18,14 @@ jobs:
           MONGO_INITDB_ROOT_USERNAME: admin
           MONGO_INITDB_ROOT_PASSWORD: password
         options: >-
-          --health-cmd="echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet"
+          --health-cmd="echo 'db.runCommand(\"ping\").ok' | mongosh localhost:27017/test --quiet"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
 
     steps:
-    # 1️⃣ Checkout code (including submodules)
+    # 1️⃣ Checkout code WITHOUT submodules
     - uses: actions/checkout@v3
-      with:
-        submodules: recursive
 
     # 2️⃣ Setup Node.js
     - name: Setup Node.js
@@ -39,7 +37,6 @@ jobs:
     - name: Install dependencies
       run: |
         npm ci
-        # Install Playwright browsers
         npx playwright install
 
     # 4️⃣ Set up environment variables
