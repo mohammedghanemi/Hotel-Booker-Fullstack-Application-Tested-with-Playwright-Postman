@@ -1,12 +1,17 @@
 const { defineConfig, devices } = require('@playwright/test');
 
 module.exports = defineConfig({
-  testDir: './', // Look in current directory (tests folder)
+  testDir: './',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
+
+  // Add global use configuration
+  use: {
+    baseURL: 'http://localhost:3000',
+  },
 
   projects: [
     {
@@ -18,7 +23,7 @@ module.exports = defineConfig({
     },
     {
       name: 'e2e',
-      testMatch: '**/e2e/**/*.spec.js', // Simplified pattern
+      testMatch: '**/e2e/**/*.spec.js',
       use: { 
         ...devices['Desktop Chrome'],
         baseURL: 'http://localhost:3000'

@@ -1,4 +1,4 @@
-require('dotenv').config(); // أضف هذا السطر في الأول
+require('dotenv').config(); 
 const mongoDB = require('../config/database');
 
 const sampleBookings = [
