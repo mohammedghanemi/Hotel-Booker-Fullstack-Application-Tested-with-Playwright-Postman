@@ -24,7 +24,7 @@ const getAllBookings = async (req, res) => {
     
     const bookings = await req.db.getCollection('bookings')
       .find(filter)
-      .project({ bookingid: 1 })
+      // REMOVE THIS LINE: .project({ bookingid: 1 })
       .toArray();
     
     res.json(bookings);
