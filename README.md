@@ -19,7 +19,6 @@ A modern full-stack web application for managing hotel bookings with a React fro
 - [Running the Application](#-running-the-application)
 - [System Architecture](#-system-architecture)
 - [Testing Strategy](#-testing-strategy)
-- [CI/CD Integration](#-cicd-integration)
 - [Deployment](#-deployment)
 - [Contributing](#-contributing)
 - [License](#-license)
@@ -111,14 +110,6 @@ Used Playwright’s performance capabilities:
 - Page metrics  
 - Network & response timing  
 - Custom performance/load scripts  
-
----
-
-### ✔ Accessibility Testing
-Performed accessibility checks using:
-- Playwright + Axe script integration  
-**or**  
-- Playwright’s built-in accessibility snapshot system  
 
 ---
 
@@ -228,24 +219,14 @@ Verify that each feature works as expected:
 
 ---
 
-### 8️⃣ Accessibility Testing
-- Validate that all pages are keyboard navigable
-- Ensure form labels and ARIA attributes exist  
-
-**Tools:** axe-core, Lighthouse
-
----
 
 ### 9️⃣ Reporting
 - Generate HTML/JSON test reports
-- Include screenshots of failed tests
-- Track test coverage and CI/CD status badges
-
+  
 ---
 
 ### ✅ Key Benefits for Job Applications
 1. **Demonstrates full-spectrum QA skills:** functional, UI, API, regression, integration, performance, security, accessibility.  
 2. **Showcases modern QA tools:** Playwright, Postman, k6, axe-core, OWASP ZAP.  
-3. **CI/CD automation:** highlights professional QA pipeline knowledge.  
-4. **Visual reports & badges:** improves GitHub portfolio presentation.  
-5. **Strong theory + practice:** explains what is tested and shows practical implementation.
+3. **Visual reports & badges:** improves GitHub portfolio presentation.  
+4. **Strong theory + practice:** explains what is tested and shows practical implementation.
