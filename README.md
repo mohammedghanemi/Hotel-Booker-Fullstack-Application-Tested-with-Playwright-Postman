@@ -45,10 +45,9 @@ It includes secure user authentication, dynamic booking management, admin contro
 ### Backend Features
 - 🔐 JWT Authentication
 - 📅 Booking CRUD Operations
-- 🛡️ Input Validation (Joi)
+- 🛡️ Input Validation
 - 🏥 Health Check Endpoints
-- 🗄️ MongoDB Integration (Mongoose ODM)
-- 🔒 Security: bcrypt, helmet, CORS
+- 🔒 Security
 
 ### Frontend Features
 - 📝 Interactive Booking Form
@@ -76,13 +75,61 @@ It includes secure user authentication, dynamic booking management, admin contro
 - CSS3 Styling
 - Create React App
 
-### Testing Tools
-- **Playwright** – E2E & UI automation
-- **Postman / Newman** – API testing
-- **k6 / Artillery** – Performance testing
-- **axe-core / Lighthouse** – Accessibility testing
-- **OWASP ZAP / Snyk** – Security testing
+## ✅ Testing Tools Used
 
+I use **only one tool: Playwright**.  
+Playwright is the core and only framework in my entire testing workflow.
+
+---
+
+### ✔ E2E Testing
+Full end-to-end automation covering complete user flows from start to finish.
+
+---
+
+### ✔ UI Testing
+Used Playwright for:
+- Component validation  
+- Form interactions  
+- Visual checks  
+- Navigation flows  
+- DOM selector handling  
+
+---
+
+### ✔ API Testing
+Performed API validation using Playwright’s built-in API features (`request` object) for:
+- Sending requests  
+- Validating responses  
+- Testing backend logic without UI  
+
+---
+
+### ✔ Performance Testing
+Used Playwright’s performance capabilities:
+- Tracing  
+- Page metrics  
+- Network & response timing  
+- Custom performance/load scripts  
+
+---
+
+### ✔ Accessibility Testing
+Performed accessibility checks using:
+- Playwright + Axe script integration  
+**or**  
+- Playwright’s built-in accessibility snapshot system  
+
+---
+
+### ✔ Security Testing
+Implemented custom Playwright security tests for:
+- Authentication  
+- Authorization  
+- Forbidden route access  
+- Input sanitization  
+- XSS attempts  
+- CSRF-related behavior  
 ---
 
 ## 🚀 Installation
