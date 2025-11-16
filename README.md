@@ -172,7 +172,7 @@ Verify that each feature works as expected:
 - Responsive testing: Mobile, tablet, desktop
 - Visual regression: screenshot comparison  
 
-**Tool:** Playwright with screenshot assertions
+**Tool:** Playwright 
 
 ---
 
@@ -181,7 +181,7 @@ Verify that each feature works as expected:
 - Validate response codes (200, 201, 400, 401, 500)
 - Schema validation  
 
-**Tools:** Postman / Newman or Playwright API testing
+**Tools:** Playwright API testing
 
 ---
 
@@ -189,7 +189,7 @@ Verify that each feature works as expected:
 - Re-run automated test suite on every release
 - Ensure existing functionality remains intact  
 
-**Tools:** Playwright + CI/CD
+**Tools:** Playwright
 
 ---
 
@@ -206,7 +206,7 @@ Verify that each feature works as expected:
 - Load testing backend endpoints
 - Measure response times and throughput  
 
-**Tools:** k6 or Artillery
+**Tools:** playwright
 
 ---
 
@@ -215,7 +215,7 @@ Verify that each feature works as expected:
 - Detect vulnerabilities (XSS, SQLi, JWT attacks)
 - Use automated security scanners  
 
-**Tools:** OWASP ZAP, Snyk, manual security checks
+**Tools:** playwright
 
 ---
 
@@ -226,7 +226,7 @@ Verify that each feature works as expected:
 ---
 
 ### ✅ Key Benefits for Job Applications
-1. **Demonstrates full-spectrum QA skills:** functional, UI, API, regression, integration, performance, security, accessibility.  
-2. **Showcases modern QA tools:** Playwright, Postman, k6, axe-core, OWASP ZAP.  
+1. **Demonstrates full-spectrum QA skills:** functional, UI, API, regression, integration, performance, security.  
+2. **Showcases modern QA tools:** Playwright.  
 3. **Visual reports & badges:** improves GitHub portfolio presentation.  
 4. **Strong theory + practice:** explains what is tested and shows practical implementation.
